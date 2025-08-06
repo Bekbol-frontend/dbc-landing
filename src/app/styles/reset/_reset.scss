@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: inline-flex;
+}
+
+a {
+  text-decoration: none;
+  display: inline-flex;
+  font-family: var(--font-desc);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+}
+
+p {
+  font-family: var(--font-desc);
+}
+
+span,
+i,
+input,
+textarea {
+  display: inline-flex;
+  font-family: var(--font-desc);
+}

@@ -1,0 +1,48 @@
+.banner {
+  background-color: var(--color-white);
+  height: 764px;
+  padding-inline: var(--space-large);
+  border-radius: var(--radius-large);
+  position: relative;
+  overflow: hidden;
+
+  & > .inner {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+
+    .left {
+      flex: 1;
+      .heading {
+        font-size: var(--heading-font-size-xl);
+        line-height: var(--heading-line-height-xl);
+        font-weight: var(--heading-font-weight);
+        color: var(--color-blue-250);
+      }
+    }
+
+    .right {
+      flex: 1;
+    }
+  }
+
+  .color1ImgWrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  .color2ImgWrapper {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+  }
+
+  .dataTextWrapper {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+  }
+}

@@ -1,0 +1,109 @@
+:root {
+  // color-cyan
+  --color-cyan-250: #00b6b9;
+  --color-cyan-200: #00e2e6;
+  --color-cyan-150: #16fbff;
+  --color-cyan-100: #8afdff;
+  --color-cyan-50: #d0feff;
+
+  // color-blue
+  --color-blue-250: #0f0f3e;
+  --color-blue-200: #1b1b6f;
+  --color-blue-150: #3838cf;
+  --color-blue-100: #9b9be7;
+  --color-blue-50: #e6e6f9;
+
+  // color-for-text
+  --color-text-250: #090909;
+  --color-text-200: #21201f;
+  --color-text-150: #2b2a29;
+  --color-text-100: #585755;
+  --color-text-50: #eee;
+
+  // color-background
+  --color-bg-cyan: #f2f8f8;
+  --color-bg-blue: #fafafd;
+
+  // color-border
+  --color-border-cyan: #deeded;
+  --color-border-blue: #dedeed;
+
+  // color-constants
+  --color-white: #fff;
+  --color-black: #000;
+
+  // fonts
+  --font-title: "Space Grotesk", sans-serif;
+  --font-desc: "DM Sans", sans-serif;
+
+  // heading
+  --heading-font-size-2xl: 100px;
+  --heading-line-height-2xl: 130px;
+  --heading-font-weight: bold;
+
+  --heading-font-size-xl: 54px;
+  --heading-line-height-xl: 70px;
+
+  // title-font-size
+  --title-font-size-lg: 38px;
+  --title-font-size-md: 28px;
+
+  // title-font-weight
+  --title-font-weight-bold: bold;
+  --title-font-weight-medium: 500;
+
+  // title-line-height
+  --title-line-height-lg: 50px;
+  --title-line-height-md: 38px;
+
+  // desc-font-size
+  --desc-font-size-sm: 22px;
+  --desc-font-size-xs: 16px;
+
+  // desc-font-weight
+  --desc-font-weight-semibold: 600;
+  --desc-font-weight-medium: 500;
+
+  // desc-line-height
+  --desc-line-height-sm: 30px;
+  --desc-line-height-xs: 22px;
+
+  // btn-font-size
+  --btn-font-size-sm: 22px;
+  --btn-font-size-xs: 16px;
+
+  // btn-font-weight
+  --btn-font-weight-semibold: 600;
+  --btn-font-weight-medium: 500;
+
+  // btn-line-height
+  --btn-line-height-sm: 30px;
+  --btn-line-height-xs: 22px;
+
+  // border-radius
+  --radius-full: 999999px;
+  --radius-large: 50px;
+  --radius-medium: 25px;
+  --radius-small: 20px;
+  --radius-x-small: 10px;
+
+  // space
+  --space-x-large: 50px;
+  --space-large: 30px;
+  --space-medium: 15px;
+  --space-small: 10px;
+  --space-x-small: 5px;
+
+  // container
+  --container-max-width: 1380px;
+
+  // header
+  --header-height: 100px;
+
+  // transition
+  --transition: 200ms ease-in-out;
+
+  // z-index
+  --z-index-header: 999;
+  --z-index-modal: 1000;
+}

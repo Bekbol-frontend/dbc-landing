@@ -1,0 +1,31 @@
+.header {
+  border-bottom: 1px solid var(--color-border-blue);
+  height: var(--header-height);
+  background-color: var(--color-bg-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-index-header);
+
+  .innerContainer {
+    flex: 1;
+
+    .border {
+      width: 1px;
+      height: 42px;
+      background-color: var(--color-border-blue);
+    }
+  }
+}
+
+.menuBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  cursor: pointer;
+}
