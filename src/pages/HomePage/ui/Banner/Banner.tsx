@@ -2,8 +2,8 @@ import { memo } from "react";
 import styles from "./Banner.module.scss";
 import { Flex } from "@/shared/ui/Flex";
 import { Button } from "@/shared/ui/Button";
-import Abstrakt from "@/shared/assets/abstract/abstract.svg";
 import { Heading } from "@/shared/ui/Heading";
+import Abstrakt from "@/shared/assets/abstract/abstract.svg";
 import DataTextImg from "@/shared/assets/abstract/Data.svg";
 import Color1 from "@/shared/assets/abstract/color1.svg";
 import Color2 from "@/shared/assets/abstract/color2.svg";
@@ -21,7 +21,7 @@ function Banner() {
         className={styles.inner}
       >
         <Flex
-          direction="column"
+          flexDirection="column"
           gap={`var(--space-large)`}
           className={styles.left}
         >

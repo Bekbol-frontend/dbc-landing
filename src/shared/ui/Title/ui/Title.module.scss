@@ -1,0 +1,16 @@
+.title {
+  font-family: var(--font-title);
+  color: var(--color-text-250);
+}
+
+.h1 {
+  font-weight: var(--title-font-weight-bold);
+  font-size: var(--title-font-size-lg);
+  list-style: var(--title-line-height-lg);
+}
+
+.h2 {
+  font-weight: var(--title-font-weight-medium);
+  font-size: var(--title-font-size-md);
+  list-style: var(--title-line-height-md);
+}
