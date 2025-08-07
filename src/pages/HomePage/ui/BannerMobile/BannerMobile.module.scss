@@ -1,9 +1,9 @@
 .bannerMobile {
   background-color: var(--color-white);
   position: relative;
-  height: 600px;
   overflow: hidden;
   border-radius: var(--radius-medium);
+  padding-bottom: var(--space-large);
 
   .img1 {
     position: absolute;
