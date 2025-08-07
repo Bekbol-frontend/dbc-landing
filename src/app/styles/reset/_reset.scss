@@ -39,3 +39,9 @@ textarea {
   display: inline-flex;
   font-family: var(--font-desc);
 }
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}

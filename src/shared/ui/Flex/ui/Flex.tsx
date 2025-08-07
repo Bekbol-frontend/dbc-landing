@@ -1,18 +1,15 @@
-import { useMemo, type ComponentProps, type CSSProperties } from "react";
+import { type ComponentProps, type CSSProperties } from "react";
 import styles from "./Flex.module.scss";
 import { clsx } from "@/shared/lib/clsx";
 
 interface IProps extends ComponentProps<"div"> {
-  align?: "flex-start" | "center" | "flex-end";
-  justify?:
-    | "flex-start"
-    | "center"
-    | "flex-end"
-    | "space-between"
-    | "space-around"
-    | "space-evenly";
-  direction?: "row" | "column";
-  gap?: number | string;
+  align?: CSSProperties["alignItems"];
+  alignSelf?: CSSProperties["alignSelf"];
+  justify?: CSSProperties["justifyContent"];
+  flexDirection?: CSSProperties["flexDirection"];
+  gap?: CSSProperties["gap"];
+  flex?: CSSProperties["flex"];
+
 }
 
 function Flex(props: IProps) {
@@ -21,26 +18,28 @@ function Flex(props: IProps) {
     className = "",
 
     align = "flex-start",
+    alignSelf = "auto",
     justify = "flex-start",
-    direction = "row",
+    flexDirection = "row",
     gap = 0,
+    flex,
+
+    style,
 
     ...otherProps
   } = props;
 
-  const flexStyle: CSSProperties = useMemo<CSSProperties>(
-    () => ({
-      alignItems: align,
-      justifyContent: justify,
-      flexDirection: direction,
-      gap: typeof gap === "number" ? `${gap}px` : gap,
-    }),
-    [align, justify, direction, gap]
-  );
-
   return (
     <div
-      style={flexStyle}
+      style={{
+        alignItems: align,
+        alignSelf,
+        justifyContent: justify,
+        flexDirection,
+        gap,
+        flex,
+        ...style,
+      }}
       className={clsx([styles.flex, className])}
       {...otherProps}
     >

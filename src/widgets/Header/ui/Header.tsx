@@ -1,15 +1,28 @@
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 import { Container } from "@/shared/ui/Container";
 import { Flex } from "@/shared/ui/Flex";
 import HeaderMenu from "./HeaderMenu/HeaderMenu";
 import { Logo } from "@/shared/ui/Logo";
 import styles from "./Header.module.scss";
 import { SwitchLang } from "@/shared/ui/SwitchLang";
-import { useBreakpoint } from "@/shared/lib/hooks/useBreakpoint";
 import BarsIcon from "@/shared/assets/icons/bars.svg";
+import XIcon from "@/shared/assets/icons/x.svg";
+import { useResponsive } from "@/shared/lib/hooks/useResponsive";
+import HeaderMenuMobile from "./HeaderMenuMobile/HeaderMenuMobile";
 
 function Header() {
-  const breakpoint = useBreakpoint();
+  const [menu, setMenu] = useState(false);
+  const { isMobile } = useResponsive();
+
+  useEffect(() => {
+    if (menu) {
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [menu]);
 
   return (
     <header className={styles.header}>
@@ -17,7 +30,7 @@ function Header() {
         <Flex align="center" justify="space-between" className="bekbol">
           <Logo />
           <Flex gap={`var(--space-large)`} align="center">
-            {breakpoint === "desktop" ? (
+            {!isMobile ? (
               <>
                 <HeaderMenu />
                 <Flex>
@@ -26,13 +39,19 @@ function Header() {
                 <SwitchLang />
               </>
             ) : (
-              <Flex className={styles.menuBtn} align="center" justify="center">
-                <img src={BarsIcon} alt="menu" />
+              <Flex
+                className={styles.menuBtn}
+                align="center"
+                justify="center"
+                onClick={() => setMenu(!menu)}
+              >
+                <img src={menu ? XIcon : BarsIcon} alt="menu" />
               </Flex>
             )}
           </Flex>
         </Flex>
       </Container>
+      <HeaderMenuMobile isOpen={menu} />
     </header>
   );
 }

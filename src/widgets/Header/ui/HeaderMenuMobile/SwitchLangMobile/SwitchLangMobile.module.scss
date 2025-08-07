@@ -1,0 +1,28 @@
+.switchLangMobile {
+  .spanLang {
+    margin-bottom: var(--space-medium);
+    font-weight: var(--btn-font-weight-medium);
+    font-size: var(--btn-font-size-xs);
+    color: var(--color-text-100);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+    .btn {
+      border-radius: var(--radius-small);
+      height: 60px;
+      padding: var(--space-medium);
+      color: var(--color-text-250);
+      font-size: var(--btn-font-size-sm);
+      font-weight: var(--btn-font-weight-semibold);
+      font-family: var(--font-desc);
+
+      &.active {
+        background-color: var(--color-bg-blue);
+      }
+    }
+  }
+}

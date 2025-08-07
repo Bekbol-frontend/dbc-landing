@@ -7,8 +7,11 @@ import { Heading } from "@/shared/ui/Heading";
 import DataTextImg from "@/shared/assets/abstract/Data.svg";
 import Color1 from "@/shared/assets/abstract/color1.svg";
 import Color2 from "@/shared/assets/abstract/color2.svg";
+import { useTranslation } from "react-i18next";
 
 function Banner() {
+  const { t } = useTranslation("home");
+
   return (
     <Flex align="center" justify="center" className={styles.banner}>
       <Flex
@@ -23,9 +26,9 @@ function Banner() {
           className={styles.left}
         >
           <Heading level="h2">
-            Biznesingiz uchun eng zamonaviy yechimlar !
+            {t("The most modern solutions for your business!")}
           </Heading>
-          <Button>Biz bilan bog’lanish</Button>
+          <Button>{t("Contact us")}</Button>
         </Flex>
         <Flex className={styles.right}>
           <img src={Abstrakt} alt="image" />

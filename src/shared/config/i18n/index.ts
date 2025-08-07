@@ -11,10 +11,14 @@ i18n
   .init({
     supportedLngs: ["en", "ru", "uz"],
     fallbackLng: "en",
-    debug: true,
+    debug: false,
 
     interpolation: {
       escapeValue: false,
+    },
+
+    backend: {
+      loadPath: "/locales/{{lng}}/{{ns}}.json",
     },
   });
 
