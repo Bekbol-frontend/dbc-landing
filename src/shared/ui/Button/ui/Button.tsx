@@ -3,7 +3,7 @@ import { clsx, type MODS_CLSX } from "@/shared/lib/clsx";
 import styles from "./Button.module.scss";
 
 interface IProps extends ComponentProps<"button"> { 
-  size?: "default" | "large";
+  size?: "default" | "large" | "mobile";
 }
 
 function Button(props: IProps) {
