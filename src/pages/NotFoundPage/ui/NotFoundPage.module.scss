@@ -1,0 +1,26 @@
+.sectionNotFound {
+  display: grid;
+  place-items: center;
+
+  .inner {
+    padding: var(--space-medium);
+    text-align: center;
+
+    .imgWrapper {
+      margin-bottom: var(--space-large);
+    }
+
+    .textWrapper {
+      text-align: center;
+      margin-bottom: var(--space-large);
+
+      .title {
+        margin-bottom: var(--space-medium);
+      }
+
+      .desc {
+        color: var(--color-text-100);
+      }
+    }
+  }
+}

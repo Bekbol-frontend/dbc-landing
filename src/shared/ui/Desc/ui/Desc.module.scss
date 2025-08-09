@@ -1,0 +1,16 @@
+.desc {
+  font-family: var(--font-desc);
+  color: var(--color-text-250);
+}
+
+.desktop {
+  font-weight: var(--desc-font-weight-semibold);
+  font-size: var(--desc-font-size-sm);
+  line-height: var(--desc-line-height-sm);
+}
+
+.mobile {
+  font-weight: var(--desc-font-weight-medium);
+  font-size: var(--desc-font-size-xs);
+  line-height: var(--desc-line-height-xs);
+}
