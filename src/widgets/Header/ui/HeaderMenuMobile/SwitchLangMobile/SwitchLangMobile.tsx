@@ -6,7 +6,8 @@ import { clsx } from "@/shared/lib/clsx";
 const langs = [
   { id: 1, lang: "O‘ZB", value: "uz" },
   { id: 2, lang: "RUS", value: "ru" },
-  { id: 3, lang: "ENG", value: "en" },
+  { id: 3, lang: "Qar", value: "qr" },
+  { id: 4, lang: "ENG", value: "en" },
 ];
 
 function SwitchLangMobile() {

@@ -6,12 +6,14 @@ import { useOutside } from "@/shared/lib/hooks/useOutside";
 const options = [
   { value: "ru", label: "Рус" },
   { value: "uz", label: "O‘zb" },
+  { value: "qr", label: "Qar" },
   { value: "en", label: "Eng" },
 ];
 
 const lang = {
   ru: "Рус",
   uz: "O‘zb",
+  qr: "Qar",
   en: "Eng",
 };
 
