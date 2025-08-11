@@ -7,6 +7,9 @@ import { useResponsive } from "@/shared/lib/hooks/useResponsive";
 import styles from "./Banner.module.scss";
 import { Skeleton } from "@/shared/ui/Skeleton";
 import { ErrorTitle } from "@/shared/ui/ErrorTitle";
+import { Heading } from "@/shared/ui/Heading";
+import { useTranslation } from "react-i18next";
+import Title from "@/shared/ui/Title/ui/Title";
 
 function Banner() {
   const [loading, setLoading] = useState(false);
@@ -15,11 +18,17 @@ function Banner() {
 
   const { isMobile } = useResponsive();
 
+  const { i18n } = useTranslation();
+
   useEffect(() => {
     setLoading(true);
     const getBanner = async () => {
       try {
-        const res = await API.get<IData<IBanner>>("/api/banner");
+        const res = await API.get<IData<IBanner>>("/api/banner", {
+          headers: {
+            "Accept-Language": i18n.language,
+          },
+        });
 
         if (!res.data.data) throw new Error("Error server");
 
@@ -33,7 +42,7 @@ function Banner() {
     };
 
     getBanner();
-  }, []);
+  }, [i18n.language]);
 
   if (loading)
     return (
@@ -59,7 +68,15 @@ function Banner() {
           backgroundRepeat: "no-repeat",
         }}
         className={styles.banner}
-      ></div>
+      >
+        <div className={styles.inner}>
+          {isMobile ? (
+            <Title level="h2">{banner.title}</Title>
+          ) : (
+            <Heading level="h2">{banner.title}</Heading>
+          )}
+        </div>
+      </div>
     )
   );
 }

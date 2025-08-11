@@ -2,8 +2,17 @@
   min-height: 764px;
   border-radius: var(--radius-large);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-large);
 
-  @media (max-width: 768px) {
-    min-height: 650px;
+  .inner {
+    max-width: 660px;
+    width: 100%;
+
+    .title {
+      color: var(--color-blue-250);
+    }
   }
 }
