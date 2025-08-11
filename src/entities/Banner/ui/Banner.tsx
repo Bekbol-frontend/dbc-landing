@@ -10,6 +10,7 @@ import { ErrorTitle } from "@/shared/ui/ErrorTitle";
 import { Heading } from "@/shared/ui/Heading";
 import { useTranslation } from "react-i18next";
 import Title from "@/shared/ui/Title/ui/Title";
+import { Button } from "@/shared/ui/Button";
 
 function Banner() {
   const [loading, setLoading] = useState(false);
@@ -18,7 +19,7 @@ function Banner() {
 
   const { isMobile } = useResponsive();
 
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   useEffect(() => {
     setLoading(true);
@@ -79,6 +80,9 @@ function Banner() {
               {banner.title}
             </Heading>
           )}
+          <Button size={isMobile ? "mobile" : "default"}>
+            {t("Contact us")}
+          </Button>
         </div>
       </div>
     )
