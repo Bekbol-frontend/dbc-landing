@@ -1,0 +1,9 @@
+.banner {
+  min-height: 764px;
+  border-radius: var(--radius-large);
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    min-height: 650px;
+  }
+}

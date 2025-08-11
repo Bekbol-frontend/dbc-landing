@@ -32,6 +32,9 @@
   --color-white: #fff;
   --color-black: #000;
 
+  // color-danger
+  --color-danger: rgb(231, 12, 56);
+
   // fonts
   --font-title: "Space Grotesk", sans-serif;
   --font-desc: "DM Sans", sans-serif;
@@ -102,7 +105,7 @@
   --header-height: 100px;
 
   // transition
-  --transition: all 200ms ease-in-out;
+  --transition: all 400ms ease-in-out;
 
   // z-index
   --z-index-header: 999;

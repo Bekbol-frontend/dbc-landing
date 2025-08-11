@@ -1,7 +1,7 @@
 import axios from "axios";
 import i18n from "../config/i18n";
 
-const baseURL = import.meta.env.VITE_BASE_URL;
+export const baseURL = import.meta.env.VITE_BASE_URL;
 
 export const API = axios.create({
   baseURL,
