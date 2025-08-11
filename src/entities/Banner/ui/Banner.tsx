@@ -49,7 +49,7 @@ function Banner() {
       <Skeleton
         style={{
           borderRadius: "var(--radius-large)",
-          height: isMobile ? "500px" : "764px",
+          height: isMobile ? "600px" : "764px",
         }}
       />
     );
@@ -71,9 +71,13 @@ function Banner() {
       >
         <div className={styles.inner}>
           {isMobile ? (
-            <Title level="h2">{banner.title}</Title>
+            <Title level="h2" className={styles.title}>
+              {banner.title}
+            </Title>
           ) : (
-            <Heading level="h2">{banner.title}</Heading>
+            <Heading level="h2" className={styles.title}>
+              {banner.title}
+            </Heading>
           )}
         </div>
       </div>
