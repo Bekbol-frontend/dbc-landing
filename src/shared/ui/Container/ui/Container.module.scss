@@ -3,4 +3,8 @@
   width: 100%;
   padding-inline: var(--space-large);
   margin-inline: auto;
+
+  @media (max-width: 768px) {
+    padding-inline: var(--space-medium);
+  }
 }
