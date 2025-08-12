@@ -1,0 +1,102 @@
+.ourAdvantages {
+  background-color: var(--color-white);
+  padding: var(--space-large);
+  border-radius: var(--radius-large);
+
+  @media only screen and (max-width: 768px) {
+    padding: var(--space-large) var(--space-medium);
+  }
+
+  .title {
+    color: var(--color-blue-250);
+    margin-left: var(--space-medium);
+    margin-bottom: var(--space-large);
+
+    @media only screen and (max-width: 768px) {
+      margin-bottom: var(--space-medium);
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media only screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .item {
+      padding: var(--space-x-large) var(--space-large);
+
+      &:first-child {
+        border-right: 1px solid var(--color-border-cyan);
+        border-bottom: 1px solid var(--color-border-cyan);
+      }
+
+      &:nth-child(2) {
+        border-bottom: 1px solid var(--color-border-cyan);
+      }
+
+      &:nth-child(3) {
+        border-right: 1px solid var(--color-border-cyan);
+      }
+
+      @media only screen and (max-width: 768px) {
+        padding: var(--space-x-large) var(--space-medium);
+        border-bottom: 1px solid var(--color-border-cyan) !important;
+
+        &:first-child {
+          border: none;
+        }
+
+        &:nth-child(2) {
+          border: none;
+        }
+
+        &:nth-child(3) {
+          border: none;
+        }
+
+        &:last-child {
+          border: none !important;
+        }
+      }
+
+      .itemInner {
+        padding: var(--space-x-large) var(--space-medium);
+
+        @media only screen and (max-width: 768px) {
+          padding: var(--space-medium);
+        }
+
+        .imgWrapper {
+          margin-bottom: var(--space-large);
+          display: flex;
+          width: 150px;
+          height: 150px;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+
+          @media only screen and (max-width: 768px) {
+            width: 100px;
+            height: 100px;
+          }
+        }
+
+        .itemTitle {
+          margin-bottom: var(--space-medium);
+        }
+
+        .desc {
+          color: var(--color-text-100);
+        }
+      }
+    }
+  }
+}
