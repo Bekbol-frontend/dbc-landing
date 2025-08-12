@@ -9,6 +9,7 @@ import styles from "./Partners.module.scss";
 import Title from "@/shared/ui/Title/ui/Title";
 import { useTranslation } from "react-i18next";
 import { useResponsive } from "@/shared/lib/hooks/useResponsive";
+import PartnersSkeleton from "./PartnersSkeleton/PartnersSkeleton";
 
 function Partners() {
   const [loading, setLoading] = useState(false);
@@ -39,7 +40,7 @@ function Partners() {
     getPartners();
   }, []);
 
-  if (loading) return "loading";
+  if (loading) return <PartnersSkeleton />;
   if (error) return <ErrorTitle error={error} />;
 
   return partners.length ? (
