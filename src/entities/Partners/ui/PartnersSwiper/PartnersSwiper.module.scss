@@ -1,0 +1,10 @@
+.partnersSwiperSlide {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 167px !important;
+
+  @media (max-width: 768px) {
+    height: 100px !important;
+  }
+}

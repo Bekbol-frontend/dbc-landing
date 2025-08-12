@@ -6,10 +6,12 @@
   flex-direction: column;
   justify-content: center;
   padding: var(--space-large);
+  margin-bottom: calc(var(--space-x-large) + 40px);
 
   @media (max-width: 768px) {
     min-height: 600px;
     padding: var(--space-medium);
+    margin-bottom: var(--space-x-large);
   }
 
   .inner {

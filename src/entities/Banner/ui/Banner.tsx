@@ -31,7 +31,7 @@ function Banner() {
           },
         });
 
-        if (!res.data.data) throw new Error("Error server");
+        if (!res.data.data) throw new Error("Error");
 
         setBanner(res.data.data);
       } catch (error) {
