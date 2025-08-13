@@ -9,6 +9,7 @@ import { ErrorTitle } from "@/shared/ui/ErrorTitle";
 import { Flex } from "@/shared/ui/Flex";
 import { useTranslation } from "react-i18next";
 import { useResponsive } from "@/shared/lib/hooks/useResponsive";
+import { Skeleton } from "@/shared/ui/Skeleton";
 
 function OurServices() {
   const [loading, setLoading] = useState(false);
@@ -62,14 +63,35 @@ function OurServices() {
               flexDirection={isMobile ? "column" : "row"}
             >
               <div className={styles.imgWrapper}>
-                <img src={`${baseURL}/${el.photo}`} alt={el.name} />
+                {loading ? (
+                  <Skeleton
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                    }}
+                    className={styles.imgSkeleton}
+                  />
+                ) : (
+                  <img src={`${baseURL}/${el.photo}`} alt={el.name} />
+                )}
               </div>
-              <Title
-                className={styles.titleItem}
-                level={isMobile ? "h2" : "h1"}
-              >
-                {el.name}
-              </Title>
+              {loading ? (
+                <Flex
+                  gap={5}
+                  className={styles.skeletonFlex}
+                  flexDirection="column"
+                >
+                  <Skeleton className={styles["skeletonTitle-1"]} />
+                  <Skeleton className={styles["skeletonTitle-2"]} />
+                </Flex>
+              ) : (
+                <Title
+                  className={styles.titleItem}
+                  level={isMobile ? "h2" : "h1"}
+                >
+                  {el.name}
+                </Title>
+              )}
             </Flex>
           </div>
         ))}

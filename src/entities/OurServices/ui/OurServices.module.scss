@@ -66,9 +66,29 @@
             height: 150px !important;
           }
 
+          .imgSkeleton {
+            width: 100% !important;
+            height: 100% !important;
+            border-radius: 50%;
+          }
+
           img {
             width: 100% !important;
             height: 100% !important;
+          }
+        }
+
+        .skeletonFlex {
+          .skeletonTitle-1 {
+            width: 210px;
+            height: 20px;
+            border-radius: var(--radius-large);
+          }
+
+          .skeletonTitle-2 {
+            width: 110px;
+            height: 20px;
+            border-radius: var(--radius-large);
           }
         }
 
