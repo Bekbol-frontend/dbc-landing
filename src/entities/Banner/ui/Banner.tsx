@@ -52,6 +52,7 @@ function Banner() {
           borderRadius: "var(--radius-large)",
           height: isMobile ? "600px" : "764px",
         }}
+        className={styles.skeleton}
       />
     );
 

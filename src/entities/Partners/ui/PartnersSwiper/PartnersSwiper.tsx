@@ -12,7 +12,6 @@ interface IProps {
 }
 
 function PartnersSwiper({ partners }: IProps) {
-  console.log(partners);
   return (
     <Swiper
       spaceBetween={5}
