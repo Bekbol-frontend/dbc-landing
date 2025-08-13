@@ -44,7 +44,6 @@ function OurServices() {
     getOurServiceData();
   }, [i18n.language]);
 
-  if (loading) return "loading....";
   if (error) return <ErrorTitle error={error} />;
 
   return (
