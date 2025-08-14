@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useResponsive } from "@/shared/lib/hooks/useResponsive";
 import { ourAdvantages } from "../items";
 import { Desc } from "@/shared/ui/Desc";
+import { SectionTitle } from "@/shared/ui/SectionTitle";
 
 function OurAdvantages() {
   const { t } = useTranslation();
@@ -13,9 +14,7 @@ function OurAdvantages() {
 
   return (
     <div className={styles.ourAdvantages}>
-      <Title className={styles.title} level={isMobile ? "h2" : "h1"}>
-        {t("Our advantages")}
-      </Title>
+      <SectionTitle title={t("Our advantages")} />
 
       <div className={styles.grid}>
         {ourAdvantages.map((el) => (

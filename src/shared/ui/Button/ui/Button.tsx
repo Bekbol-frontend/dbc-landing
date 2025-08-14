@@ -1,8 +1,8 @@
-import { memo, useMemo, type ComponentProps } from "react";
+import { useMemo, type ComponentProps } from "react";
 import { clsx, type MODS_CLSX } from "@/shared/lib/clsx";
 import styles from "./Button.module.scss";
 
-interface IProps extends ComponentProps<"button"> { 
+interface IProps extends ComponentProps<"button"> {
   size?: "default" | "large" | "mobile";
 }
 
@@ -23,4 +23,4 @@ function Button(props: IProps) {
   );
 }
 
-export default memo(Button);
+export default Button;

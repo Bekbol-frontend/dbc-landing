@@ -10,13 +10,14 @@ import { Flex } from "@/shared/ui/Flex";
 import { useTranslation } from "react-i18next";
 import { useResponsive } from "@/shared/lib/hooks/useResponsive";
 import { Skeleton } from "@/shared/ui/Skeleton";
+import { SectionTitle } from "@/shared/ui/SectionTitle";
 
 function OurServices() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [ourServicesData, setOurServicesData] = useState<IOurService[]>([]);
 
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const { isMobile } = useResponsive();
 
   useEffect(() => {
@@ -48,9 +49,7 @@ function OurServices() {
 
   return (
     <div className={styles.ourServices}>
-      <Title className={styles.title} level={isMobile ? "h2" : "h1"}>
-        OurServices
-      </Title>
+      <SectionTitle title={t("Our services")} />
 
       <div className={styles.grid}>
         {ourServicesData.map((el) => (

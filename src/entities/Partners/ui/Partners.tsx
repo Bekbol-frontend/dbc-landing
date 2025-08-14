@@ -6,10 +6,9 @@ import type { IData } from "@/shared/types/data";
 import { ErrorTitle } from "@/shared/ui/ErrorTitle";
 import PartnersSwiper from "./PartnersSwiper/PartnersSwiper";
 import styles from "./Partners.module.scss";
-import Title from "@/shared/ui/Title/ui/Title";
 import { useTranslation } from "react-i18next";
-import { useResponsive } from "@/shared/lib/hooks/useResponsive";
 import PartnersSkeleton from "./PartnersSkeleton/PartnersSkeleton";
+import { SectionTitle } from "@/shared/ui/SectionTitle";
 
 function Partners() {
   const [loading, setLoading] = useState(false);
@@ -17,7 +16,6 @@ function Partners() {
   const [partners, setPartners] = useState<IPartner[]>([]);
 
   const { t } = useTranslation();
-  const { isMobile } = useResponsive();
 
   useEffect(() => {
     setLoading(true);
@@ -45,9 +43,7 @@ function Partners() {
 
   return partners.length ? (
     <div className={styles.partners}>
-      <Title className={styles.title} level={isMobile ? "h2" : "h1"}>
-        {t("Our partners")}
-      </Title>
+      <SectionTitle title={t("Our partners")} className={styles.title} />
       <PartnersSwiper partners={partners} />
     </div>
   ) : (

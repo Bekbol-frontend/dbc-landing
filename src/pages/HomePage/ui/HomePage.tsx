@@ -5,6 +5,7 @@ import { Banner } from "@/entities/Banner";
 import { Partners } from "@/entities/Partners";
 import { OurAdvantages } from "@/entities/OurAdvantages";
 import { OurServices } from "@/entities/OurServices";
+import { Projects } from "@/entities/Projects";
 
 function HomePage() {
   return (
@@ -14,6 +15,7 @@ function HomePage() {
         <Partners />
         <OurAdvantages />
         <OurServices />
+        <Projects />
       </Container>
     </Section>
   );

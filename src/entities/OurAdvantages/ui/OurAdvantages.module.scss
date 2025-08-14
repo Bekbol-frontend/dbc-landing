@@ -6,17 +6,7 @@
 
   @media only screen and (max-width: 768px) {
     padding: var(--space-large) var(--space-medium);
-    margin-bottom: var(--space-x-large);
-  }
-
-  .title {
-    color: var(--color-blue-250);
-    margin-left: var(--space-medium);
     margin-bottom: var(--space-large);
-
-    @media only screen and (max-width: 768px) {
-      margin-bottom: var(--space-medium);
-    }
   }
 
   .grid {
