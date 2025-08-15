@@ -12,5 +12,13 @@
     .btn {
       width: 100%;
     }
+
+    .descSuccessfully {
+      color: var(--color-cyan-250);
+    }
+
+    .descError {
+      color: var(--color-danger);
+    }
   }
 }

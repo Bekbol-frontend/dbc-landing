@@ -13,8 +13,12 @@
   "All projects": "Все проекты",
   "Send a message": "Отправить сообщение",
   "Your Name Last Name": "Ваше имя Фамилия",
-  "Your phone number": "Ваш номер телефона",
+
   "Write a brief description of your project...": "Напишите краткое описание вашего проекта...",
   "Do you have a project? Let's chat!": "У вас есть проект? Давайте пообщаемся!",
-    "Fill out the form — we will contact you soon! Let's turn your idea into a successful project together!": "Заполните форму — мы свяжемся с вами в ближайшее время! Давайте вместе превратим вашу идею в успешный проект!"
+  "Fill out the form — we will contact you soon! Let's turn your idea into a successful project together!": "Заполните форму — мы свяжемся с вами в ближайшее время! Давайте вместе превратим вашу идею в успешный проект!",
+  "Enter your name": "Введите свое имя",
+  "Your phone number": "Ваш номер телефона",
+  "Form submitted successfully!": "Форма успешно отправлена!",
+  "Загрузка...": "Загрузка..."
 }

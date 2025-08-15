@@ -13,8 +13,11 @@
   "All projects": "All projects",
   "Send a message": "Send a message",
   "Your Name Last Name": "Your Name Last Name",
-  "Your phone number": "Your phone number",
   "Write a brief description of your project...": "Write a brief description of your project...",
   "Do you have a project? Let's chat!": "Do you have a project? Let's chat!",
-  "Fill out the form — we will contact you soon! Let's turn your idea into a successful project together!": "Fill out the form — we will contact you soon! Let's turn your idea into a successful project together!"
+  "Fill out the form — we will contact you soon! Let's turn your idea into a successful project together!": "Fill out the form — we will contact you soon! Let's turn your idea into a successful project together!",
+  "Enter your name": "Enter your name",
+  "Your phone number": "Your phone number",
+  "Form submitted successfully!": "Form submitted successfully!",
+  "Loading...": "Loading..."
 }
