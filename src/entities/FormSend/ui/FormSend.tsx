@@ -7,36 +7,39 @@ import { Desc } from "@/shared/ui/Desc";
 import { useTranslation } from "react-i18next";
 import { useResponsive } from "@/shared/lib/hooks/useResponsive";
 import Title from "@/shared/ui/Title/ui/Title";
+import { Content } from "@/shared/ui/Content";
 
 function FormSend() {
   const { t } = useTranslation();
   const { isMobile } = useResponsive();
 
   return (
-    <Flex
-      className={styles.formSend}
-      gap={isMobile ? 30 : 50}
-      flexDirection={isMobile ? "column" : "row"}
-    >
-      <div className={styles.left}>
-        {isMobile ? (
-          <Title level="h2" className={styles.heading}>
-            {t("Do you have a project? Let's chat!")}
-          </Title>
-        ) : (
-          <Heading level="h2" className={styles.heading}>
-            {t("Do you have a project? Let's chat!")}
-          </Heading>
-        )}
-
-        <Desc className={styles.desc} level={isMobile ? "mobile" : "desktop"}>
-          {t(
-            "Fill out the form — we will contact you soon! Let's turn your idea into a successful project together!"
+    <Content>
+      <Flex
+        className={styles.formSend}
+        gap={isMobile ? 30 : 50}
+        flexDirection={isMobile ? "column" : "row"}
+      >
+        <div className={styles.left}>
+          {isMobile ? (
+            <Title level="h2" className={styles.heading}>
+              {t("Do you have a project? Let's chat!")}
+            </Title>
+          ) : (
+            <Heading level="h2" className={styles.heading}>
+              {t("Do you have a project? Let's chat!")}
+            </Heading>
           )}
-        </Desc>
-      </div>
-      <Form />
-    </Flex>
+
+          <Desc className={styles.desc} level={isMobile ? "mobile" : "desktop"}>
+            {t(
+              "Fill out the form — we will contact you soon! Let's turn your idea into a successful project together!"
+            )}
+          </Desc>
+        </div>
+        <Form />
+      </Flex>
+    </Content>
   );
 }
 

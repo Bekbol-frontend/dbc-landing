@@ -6,6 +6,7 @@ import { useResponsive } from "@/shared/lib/hooks/useResponsive";
 import { ourAdvantages } from "../items";
 import { Desc } from "@/shared/ui/Desc";
 import { SectionTitle } from "@/shared/ui/SectionTitle";
+import { Content } from "@/shared/ui/Content";
 
 function OurAdvantages() {
   const { t } = useTranslation();
@@ -13,7 +14,7 @@ function OurAdvantages() {
   const { isMobile } = useResponsive();
 
   return (
-    <div className={styles.ourAdvantages}>
+    <Content>
       <SectionTitle title={t("Our advantages")} />
 
       <div className={styles.grid}>
@@ -39,7 +40,7 @@ function OurAdvantages() {
           </div>
         ))}
       </div>
-    </div>
+    </Content>
   );
 }
 

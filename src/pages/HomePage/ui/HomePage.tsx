@@ -7,6 +7,7 @@ import { OurAdvantages } from "@/entities/OurAdvantages";
 import { OurServices } from "@/entities/OurServices";
 import { Projects } from "@/entities/Projects";
 import { FormSend } from "@/entities/FormSend";
+import { Company } from "@/entities/Company";
 
 function HomePage() {
   return (
@@ -17,6 +18,7 @@ function HomePage() {
         <OurAdvantages />
         <OurServices />
         <Projects />
+        <Company />
         <FormSend />
       </Container>
     </Section>

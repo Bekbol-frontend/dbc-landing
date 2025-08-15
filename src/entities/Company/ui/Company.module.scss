@@ -1,0 +1,143 @@
+.left {
+  width: 400px;
+  display: flex;
+  border-radius: var(--radius-medium);
+  overflow: hidden;
+  flex: 1;
+
+  @media only screen and (max-width: 768px) {
+    width: auto;
+    border-radius: var(--radius-x-small);
+    margin-inline: auto;
+  }
+
+  .imgSkeleton {
+    width: 100%;
+    height: 500px;
+    border-radius: var(--radius-medium);
+
+    @media only screen and (max-width: 768px) {
+      width: 320px;
+      height: 400px;
+      margin-inline: auto;
+      border-radius: var(--radius-x-small);
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(1.07);
+  }
+}
+
+.right {
+  flex: 2;
+  width: 100%;
+
+  .desc {
+    color: var(--color-text-100);
+  }
+
+  .descSkeleton1 {
+    height: 20px;
+    width: 100%;
+    border-radius: var(--radius-x-small);
+  }
+
+  .descSkeleton2 {
+    height: 20px;
+    width: 67%;
+    border-radius: var(--radius-x-small);
+  }
+
+  .descBottom {
+    margin: var(--space-large) 0;
+
+    @media only screen and (max-width: 768px) {
+      margin: var(--space-medium) 0;
+    }
+  }
+
+  .descBottomSkeleton {
+    height: 20px;
+    width: 100%;
+    border-radius: var(--radius-x-small);
+    margin: var(--space-large) 0;
+
+    @media only screen and (max-width: 768px) {
+      margin: var(--space-medium) 0;
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media only screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    .item {
+      &:first-child {
+        border-bottom: 1px solid var(--color-border-blue);
+      }
+
+      &:nth-child(2) {
+        border-bottom: 1px solid var(--color-border-blue);
+      }
+
+      &:nth-child(even) {
+        border-left: 1px solid var(--color-border-blue);
+        padding: var(--space-medium) var(--space-large);
+      }
+
+      &:nth-child(odd) {
+        padding: var(--space-medium);
+      }
+
+      @media only screen and (max-width: 768px) {
+        padding: var(--space-medium) 0px !important;
+
+        &:nth-child(n) {
+          border: none;
+          border-bottom: 1px solid var(--color-border-blue) !important;
+        }
+
+        &:last-child {
+          border: none !important;
+        }
+      }
+
+      .itemTitle {
+        color: var(--color-blue-250);
+        margin-bottom: var(--space-large);
+
+        @media only screen and (max-width: 768px) {
+          margin-bottom: var(--space-medium);
+        }
+      }
+
+      .itemTitleSkeleton {
+        width: 120px;
+        border-radius: var(--radius-x-small);
+        margin-bottom: var(--space-large);
+
+        @media only screen and (max-width: 768px) {
+          margin-bottom: var(--space-medium);
+        }
+      }
+
+      .itemDesc {
+        color: var(--color-text-100);
+      }
+
+      .itemDescSkeleton {
+        width: 100%;
+        height: 20px;
+        border-radius: var(--radius-x-small);
+      }
+    }
+  }
+}

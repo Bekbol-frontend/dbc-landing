@@ -9,6 +9,7 @@ import styles from "./Partners.module.scss";
 import { useTranslation } from "react-i18next";
 import PartnersSkeleton from "./PartnersSkeleton/PartnersSkeleton";
 import { SectionTitle } from "@/shared/ui/SectionTitle";
+import { Content } from "@/shared/ui/Content";
 
 function Partners() {
   const [loading, setLoading] = useState(false);
@@ -42,10 +43,10 @@ function Partners() {
   if (error) return <ErrorTitle error={error} />;
 
   return partners.length ? (
-    <div className={styles.partners}>
+    <Content>
       <SectionTitle title={t("Our partners")} className={styles.title} />
       <PartnersSwiper partners={partners} />
-    </div>
+    </Content>
   ) : (
     "joq"
   );

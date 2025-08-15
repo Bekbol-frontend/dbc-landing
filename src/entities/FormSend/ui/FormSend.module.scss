@@ -1,12 +1,4 @@
 .formSend {
-  background-color: var(--color-white);
-  padding: var(--space-large);
-  border-radius: var(--radius-large);
-
-  @media only screen and (max-width: 768px) {
-    padding: var(--space-medium);
-  }
-
   .left {
     flex: 1.1;
 

@@ -1,140 +1,128 @@
-.projects {
-  background-color: var(--color-white);
-  padding: var(--space-large);
-  border-radius: var(--radius-large);
-  margin-bottom: calc(var(--space-x-large) + 40px);
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-bottom: var(--space-large);
 
   @media only screen and (max-width: 768px) {
-    padding: var(--space-medium);
-    margin-bottom: var(--space-large);
+    margin-bottom: var(--space-medium);
   }
 
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    margin-bottom: var(--space-large);
+  .item {
+    padding: var(--space-large);
+    border-bottom: 1px solid var(--color-border-blue);
 
     @media only screen and (max-width: 768px) {
-      margin-bottom: var(--space-medium);
+      padding: var(--space-medium) 0;
     }
 
-    .item {
-      padding: var(--space-large);
-      border-bottom: 1px solid var(--color-border-blue);
+    &:last-child {
+      border: none;
+    }
 
-      @media only screen and (max-width: 768px) {
-        padding: var(--space-medium) 0;
+    .left {
+      flex: 1.3;
+
+      .title {
+        margin-bottom: var(--space-medium);
       }
 
-      &:last-child {
-        border: none;
+      .titleSkeleton {
+        width: 240px;
+        height: 40px;
+        border-radius: var(--radius-x-small);
+        margin-bottom: var(--space-medium);
       }
 
-      .left {
-        flex: 1.3;
+      .subTitle {
+        margin-bottom: var(--space-large);
 
-        .title {
+        @media only screen and (max-width: 768px) {
           margin-bottom: var(--space-medium);
         }
+      }
 
-        .titleSkeleton {
-          width: 240px;
-          height: 40px;
-          border-radius: var(--radius-x-small);
+      .subTitleSkeleton {
+        width: 340px;
+        height: 30px;
+        border-radius: var(--radius-x-small);
+        margin-bottom: var(--space-large);
+
+        @media only screen and (max-width: 768px) {
           margin-bottom: var(--space-medium);
-        }
-
-        .subTitle {
-          margin-bottom: var(--space-large);
-
-          @media only screen and (max-width: 768px) {
-            margin-bottom: var(--space-medium);
-          }
-        }
-
-        .subTitleSkeleton {
-          width: 340px;
-          height: 30px;
-          border-radius: var(--radius-x-small);
-          margin-bottom: var(--space-large);
-
-          @media only screen and (max-width: 768px) {
-            margin-bottom: var(--space-medium);
-          }
-        }
-
-        .desc {
-          color: var(--color-text-100);
-          margin-bottom: var(--space-large);
-
-          @media only screen and (max-width: 768px) {
-            margin-bottom: var(--space-medium);
-          }
-        }
-
-        .flexDescSkeleton {
-          margin-bottom: var(--space-large);
-
-          @media only screen and (max-width: 768px) {
-            margin-bottom: var(--space-medium);
-          }
-        }
-
-        .descSkeleton1 {
-          width: 92%;
-          height: 14px;
-          border-radius: var(--radius-x-small);
-        }
-
-        .descSkeleton2 {
-          width: 75%;
-          height: 14px;
-          border-radius: var(--radius-x-small);
-        }
-
-        .descSkeleton3 {
-          width: 85%;
-          height: 14px;
-          border-radius: var(--radius-x-small);
-        }
-
-        .link {
-          width: 304px;
-          background-color: var(--color-bg-blue);
-
-          @media only screen and (max-width: 768px) {
-            width: 100%;
-          }
-        }
-
-        .linkSkeleton {
-          width: 304px;
-          height: 90px;
-          border-radius: var(--radius-full);
-
-          @media only screen and (max-width: 768px) {
-            width: 100%;
-          }
         }
       }
 
-      .right {
-        flex: 1;
-        display: flex;
+      .desc {
+        color: var(--color-text-100);
+        margin-bottom: var(--space-large);
+
+        @media only screen and (max-width: 768px) {
+          margin-bottom: var(--space-medium);
+        }
+      }
+
+      .flexDescSkeleton {
+        margin-bottom: var(--space-large);
+
+        @media only screen and (max-width: 768px) {
+          margin-bottom: var(--space-medium);
+        }
+      }
+
+      .descSkeleton1 {
+        width: 92%;
+        height: 14px;
+        border-radius: var(--radius-x-small);
+      }
+
+      .descSkeleton2 {
+        width: 75%;
+        height: 14px;
+        border-radius: var(--radius-x-small);
+      }
+
+      .descSkeleton3 {
+        width: 85%;
+        height: 14px;
+        border-radius: var(--radius-x-small);
+      }
+
+      .link {
+        width: 304px;
+        background-color: var(--color-bg-blue);
+
+        @media only screen and (max-width: 768px) {
+          width: 100%;
+        }
+      }
+
+      .linkSkeleton {
+        width: 304px;
+        height: 90px;
+        border-radius: var(--radius-full);
+
+        @media only screen and (max-width: 768px) {
+          width: 100%;
+        }
+      }
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      border-radius: var(--radius-medium);
+      overflow: hidden;
+
+      .rightSekeleton {
+        width: 100%;
+        height: 300px;
         border-radius: var(--radius-medium);
-        overflow: hidden;
+      }
 
-        .rightSekeleton {
-          width: 100%;
-          height: 300px;
-          border-radius: var(--radius-medium);
-        }
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-        }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
     }
   }

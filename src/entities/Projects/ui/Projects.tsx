@@ -14,6 +14,7 @@ import { LinkBtn } from "@/shared/ui/LinkBtn";
 import { Button } from "@/shared/ui/Button";
 import { Skeleton } from "@/shared/ui/Skeleton";
 import { useResponsive } from "@/shared/lib/hooks/useResponsive";
+import { Content } from "@/shared/ui/Content";
 
 function Projects() {
   const [loading, setLoading] = useState(false);
@@ -59,7 +60,7 @@ function Projects() {
   if (error) return <ErrorTitle error={error} />;
 
   return (
-    <div className={styles.projects}>
+    <Content>
       <SectionTitle title={t("Our projects")} />
 
       <div className={styles.grid}>
@@ -146,7 +147,7 @@ function Projects() {
           {t("All projects")}
         </Button>
       </Flex>
-    </div>
+    </Content>
   );
 }
 

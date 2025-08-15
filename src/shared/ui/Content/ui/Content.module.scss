@@ -1,0 +1,12 @@
+.content {
+  background-color: var(--color-white);
+  border-radius: var(--radius-large);
+  padding: var(--space-large);
+  margin-bottom: calc(var(--space-x-large) + 40px);
+
+  @media only screen and (max-width: 768px) {
+    padding: var(--space-medium);
+    margin-bottom: var(--space-large);
+    border-radius: var(--radius-medium);
+  }
+}

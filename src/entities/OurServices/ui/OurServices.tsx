@@ -11,6 +11,7 @@ import { useTranslation } from "react-i18next";
 import { useResponsive } from "@/shared/lib/hooks/useResponsive";
 import { Skeleton } from "@/shared/ui/Skeleton";
 import { SectionTitle } from "@/shared/ui/SectionTitle";
+import { Content } from "@/shared/ui/Content";
 
 function OurServices() {
   const [loading, setLoading] = useState(false);
@@ -48,7 +49,7 @@ function OurServices() {
   if (error) return <ErrorTitle error={error} />;
 
   return (
-    <div className={styles.ourServices}>
+    <Content>
       <SectionTitle title={t("Our services")} />
 
       <div className={styles.grid}>
@@ -94,7 +95,7 @@ function OurServices() {
           </div>
         ))}
       </div>
-    </div>
+    </Content>
   );
 }
 
