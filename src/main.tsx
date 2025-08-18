@@ -7,9 +7,12 @@ import "./shared/config/i18n";
 
 // styles
 import "./app/styles/main.scss";
+import { StoreProvider } from "./app/Provider/StoreProvider/index.ts";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
-    <App />
+    <StoreProvider>
+      <App />
+    </StoreProvider>
   </BrowserRouter>
 );

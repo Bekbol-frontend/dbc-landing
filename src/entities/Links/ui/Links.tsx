@@ -1,0 +1,31 @@
+import { memo } from "react";
+import styles from "./Links.module.scss";
+import { Flex } from "@/shared/ui/Flex";
+import { Link } from "react-router-dom";
+import { routePaths } from "@/shared/config/routeConfig";
+import { clsx } from "@/shared/lib/clsx";
+
+interface IProps {
+  className?: string;
+}
+
+function Links({ className = "" }: IProps) {
+  return (
+    <Flex flexDirection="column" gap={15} className={clsx([className])}>
+      <Link to={routePaths.Home} className={styles.menuLink}>
+        Xizmatlar
+      </Link>
+      <Link to={routePaths.Home} className={styles.menuLink}>
+        Loyihalar
+      </Link>
+      <Link to={routePaths.Home} className={styles.menuLink}>
+        Bizning jamoa
+      </Link>
+      <Link to={routePaths.Home} className={styles.menuLink}>
+        Kontaktlar
+      </Link>
+    </Flex>
+  );
+}
+
+export default memo(Links);

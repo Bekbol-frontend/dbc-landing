@@ -1,0 +1,23 @@
+.spanLabel {
+  font-size: var(--desc-font-size-sm);
+  font-weight: var(--desc-font-weight-semibold);
+  color: var(--color-blue-250);
+
+  @media only screen and (max-width: 768px) {
+    font-size: var(--desc-font-size-xs);
+    font-weight: var(--title-font-weight-medium);
+  }
+}
+
+.phoneAndEmailLink {
+  color: var(--color-blue-250);
+  font-weight: var(--btn-font-weight-semibold);
+  font-size: var(--btn-font-size-sm);
+  padding: var(--space-medium) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid var(--color-border-blue);
+  border-radius: var(--radius-full);
+}

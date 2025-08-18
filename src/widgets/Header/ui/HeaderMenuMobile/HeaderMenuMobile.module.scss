@@ -29,37 +29,10 @@
     padding: var(--space-medium);
     border: 1px solid var(--color-border-cyan);
 
-    .menuLink {
-      display: flex;
-      width: 100%;
-      font-weight: var(--title-font-weight-medium);
-      font-size: var(--title-font-size-md);
-      color: var(--color-text-250);
-    }
-
     .spanBorder {
       border: 1px solid var(--color-border-blue);
       width: 100%;
       margin: var(--space-large) 0;
-    }
-
-    .spanLabel {
-      font-size: var(--desc-font-size-xs);
-      font-weight: var(--title-font-weight-medium);
-      color: var(--color-blue-250);
-    }
-
-    .phoneAndEmailLink {
-      color: var(--color-blue-250);
-      font-weight: var(--btn-font-weight-semibold);
-      font-size: var(--btn-font-size-sm);
-      padding: var(--space-medium) 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      border: 1px solid var(--color-border-blue);
-      border-radius: var(--radius-full);
     }
   }
 }

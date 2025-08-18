@@ -31,7 +31,6 @@ function Company() {
             "Accept-Language": i18n.language,
           },
         });
-        console.log(res);
         if (!res.data) throw new Error("Error");
 
         setCompanyData(res.data.data);

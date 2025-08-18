@@ -1,0 +1,20 @@
+.menuLink {
+  display: flex;
+  width: 100%;
+  color: var(--color-text-250);
+  font-family: var(--font-title);
+  font-size: var(--title-font-size-lg);
+  font-weight: var(--title-font-weight-bold);
+  line-height: var(--title-line-height-lg);
+  transition: var(--transition);
+
+  &:hover {
+    color: var(--color-blue-150);
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-weight: var(--title-font-weight-medium);
+    font-size: var(--title-font-size-md);
+    line-height: var(--title-line-height-md);
+  }
+}
