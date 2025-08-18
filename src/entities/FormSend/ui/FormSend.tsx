@@ -14,7 +14,7 @@ function FormSend() {
   const { isMobile } = useResponsive();
 
   return (
-    <Content>
+    <Content id="contact-form">
       <Flex
         className={styles.formSend}
         gap={isMobile ? 30 : 50}

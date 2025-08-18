@@ -10,7 +10,7 @@ import { ErrorTitle } from "@/shared/ui/ErrorTitle";
 import { Heading } from "@/shared/ui/Heading";
 import { useTranslation } from "react-i18next";
 import Title from "@/shared/ui/Title/ui/Title";
-import { Button } from "@/shared/ui/Button";
+import { LinkBtn } from "@/shared/ui/LinkBtn";
 
 function Banner() {
   const [loading, setLoading] = useState(false);
@@ -81,9 +81,9 @@ function Banner() {
               {banner.title}
             </Heading>
           )}
-          <Button size={isMobile ? "mobile" : "default"}>
+          <LinkBtn href="#contact-form" size={isMobile ? "mobile" : "default"}>
             {t("Contact us")}
-          </Button>
+          </LinkBtn>
         </div>
       </div>
     )

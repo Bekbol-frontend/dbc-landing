@@ -12,10 +12,12 @@ import { ErrorTitle } from "@/shared/ui/ErrorTitle";
 import { baseURL } from "@/shared/api";
 import { Skeleton } from "@/shared/ui/Skeleton";
 import { useResponsive } from "@/shared/lib/hooks/useResponsive";
+import { useTranslation } from "react-i18next";
 
 function Footer() {
   const { error, footerData, loading } = useAppContext();
   const { isMobile } = useResponsive();
+  const { t } = useTranslation();
 
   if (error) return <ErrorTitle error={error} />;
 
@@ -31,8 +33,9 @@ function Footer() {
           >
             <div className={styles.left}>
               <Title level="h2" className={styles.title}>
-                Shunchaki xizmat emas – {!isMobile && <br />} Loyihangiz uchun
-                yechim taklif qilamiz.
+                {t(
+                  "Not just a service – we offer a solution for your project."
+                )}
               </Title>
 
               {!isMobile && <EmailAndPhone />}
@@ -52,7 +55,7 @@ function Footer() {
           >
             <div className={styles.leftBottom}>
               <Desc level="mobile" className={styles.desc}>
-                © {new Date().getFullYear()} DBC. Barcha huquqlar himoyalangan.
+                © {new Date().getFullYear()} DBC. {t("All rights reserved.")}
               </Desc>
             </div>
             <div className={styles.rightBottom}>

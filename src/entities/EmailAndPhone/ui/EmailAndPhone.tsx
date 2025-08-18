@@ -4,6 +4,7 @@ import styles from "./EmailAndPhone.module.scss";
 import { useResponsive } from "@/shared/lib/hooks/useResponsive";
 import { clsx } from "@/shared/lib/clsx";
 import { useAppContext } from "@/app/Provider/StoreProvider";
+import { useTranslation } from "react-i18next";
 
 interface IProps {
   className?: string;
@@ -13,6 +14,7 @@ function EmailAndPhone({ className = "" }: IProps) {
   const { isMobile } = useResponsive();
 
   const { footerData } = useAppContext();
+  const { t } = useTranslation();
 
   return (
     <Flex
@@ -44,7 +46,7 @@ function EmailAndPhone({ className = "" }: IProps) {
           width: "100%",
         }}
       >
-        <span className={styles.spanLabel}>Telefon raqam</span>
+        <span className={styles.spanLabel}>{t("Phone number")}</span>
         <a
           href={`tel:${footerData?.phone}`}
           className={styles.phoneAndEmailLink}

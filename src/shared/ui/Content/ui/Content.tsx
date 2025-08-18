@@ -1,13 +1,17 @@
 import { clsx } from "@/shared/lib/clsx";
 import styles from "./Content.module.scss";
+import type { ComponentProps } from "react";
 
-interface IProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-function Content({ children, className = "" }: IProps) {
-  return <div className={clsx([styles.content, className])}>{children}</div>;
+function Content({
+  children,
+  className = "",
+  ...otherProps
+}: ComponentProps<"div">) {
+  return (
+    <div className={clsx([styles.content, className])} {...otherProps}>
+      {children}
+    </div>
+  );
 }
 
 export default Content;
