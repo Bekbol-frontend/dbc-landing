@@ -8,6 +8,7 @@ import { OurServices } from "@/entities/OurServices";
 import { Projects } from "@/entities/Projects";
 import { FormSend } from "@/entities/FormSend";
 import { Company } from "@/entities/Company";
+import { Customers } from "@/entities/Customers";
 
 function HomePage() {
   return (
@@ -20,6 +21,7 @@ function HomePage() {
         <Projects />
         <Company />
         <FormSend />
+        <Customers />
       </Container>
     </Section>
   );
