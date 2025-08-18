@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./CustomerSwiper.module.scss";
 import Quote from "@/shared/assets/icons/quote.svg";
@@ -9,19 +9,29 @@ import type { ICustomer } from "../../types";
 import { Desc } from "@/shared/ui/Desc";
 import { Flex } from "@/shared/ui/Flex";
 import { baseURL } from "@/shared/api";
+import { Navigation } from "swiper/modules";
+
+import NextIcon from "@/shared/assets/icons/next.svg";
+import { clsx } from "@/shared/lib/clsx";
 
 interface IProps {
   data: ICustomer[];
 }
 
 function CustomerSwiper({ data }: IProps) {
+  const navigationPrevRef = useRef(null);
+  const navigationNextRef = useRef(null);
+
   return (
     <Swiper
       slidesPerView={3.8}
       spaceBetween={30}
-      modules={[]}
+      navigation={{
+        prevEl: navigationPrevRef.current,
+        nextEl: navigationNextRef.current,
+      }}
+      modules={[Navigation]}
       className={styles.swiperWrapper}
-      autoHeight={false}
       breakpoints={{
         300: {
           slidesPerView: 1.2,
@@ -54,6 +64,18 @@ function CustomerSwiper({ data }: IProps) {
           </Flex>
         </SwiperSlide>
       ))}
+
+      <div className={styles.navWrapper}>
+        <span
+          ref={navigationPrevRef}
+          className={clsx([styles.navSpan, styles.rotate])}
+        >
+          <img src={NextIcon} alt="prev" />
+        </span>
+        <span ref={navigationNextRef} className={styles.navSpan}>
+          <img src={NextIcon} alt="next" />
+        </span>
+      </div>
     </Swiper>
   );
 }
