@@ -15,9 +15,11 @@ import { useResponsive } from "@/shared/lib/hooks/useResponsive";
 import { useTranslation } from "react-i18next";
 
 function Footer() {
-  const { error, footerData, loading } = useAppContext();
+  const { footer } = useAppContext();
   const { isMobile } = useResponsive();
   const { t } = useTranslation();
+
+  const { loading, error, footerData } = footer;
 
   if (error) return <ErrorTitle error={error} />;
 

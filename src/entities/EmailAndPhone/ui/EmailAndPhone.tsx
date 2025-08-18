@@ -13,8 +13,10 @@ interface IProps {
 function EmailAndPhone({ className = "" }: IProps) {
   const { isMobile } = useResponsive();
 
-  const { footerData } = useAppContext();
+  const { footer } = useAppContext();
   const { t } = useTranslation();
+
+  const { footerData } = footer;
 
   return (
     <Flex

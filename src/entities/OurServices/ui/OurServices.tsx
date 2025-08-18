@@ -1,10 +1,7 @@
-import { memo, useEffect, useState } from "react";
+import { memo } from "react";
 import styles from "./OurServices.module.scss";
 import Title from "@/shared/ui/Title/ui/Title";
-import type { IOurService } from "../types";
-import { API, baseURL } from "@/shared/api";
-import type { IData } from "@/shared/types/data";
-import type { AxiosError } from "axios";
+import { baseURL } from "@/shared/api";
 import { ErrorTitle } from "@/shared/ui/ErrorTitle";
 import { Flex } from "@/shared/ui/Flex";
 import { useTranslation } from "react-i18next";
@@ -12,45 +9,24 @@ import { useResponsive } from "@/shared/lib/hooks/useResponsive";
 import { Skeleton } from "@/shared/ui/Skeleton";
 import { SectionTitle } from "@/shared/ui/SectionTitle";
 import { Content } from "@/shared/ui/Content";
+import { useAppContext } from "@/app/Provider/StoreProvider";
 
-function OurServices() {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [ourServicesData, setOurServicesData] = useState<IOurService[]>([]);
+interface IProps {
+  notTitle?: boolean;
+}
 
-  const { i18n, t } = useTranslation();
+function OurServices({ notTitle }: IProps) {
+  const { t } = useTranslation();
   const { isMobile } = useResponsive();
+  const { services } = useAppContext();
 
-  useEffect(() => {
-    setLoading(true);
-    const getOurServiceData = async () => {
-      try {
-        const res = await API.get<IData<IOurService[]>>("/api/services", {
-          headers: {
-            "Accept-Language": i18n.language,
-          },
-        });
-
-        if (!res.data.data) throw new Error("Error");
-
-        setOurServicesData(res.data.data);
-      } catch (error) {
-        const err = error as AxiosError;
-        console.log(err.message);
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    getOurServiceData();
-  }, [i18n.language]);
+  const { data: ourServicesData, loading, error } = services;
 
   if (error) return <ErrorTitle error={error} />;
 
   return (
     <Content>
-      <SectionTitle title={t("Our services")} />
+      {notTitle ? null : <SectionTitle title={t("Our services")} />}
 
       <div className={styles.grid}>
         {ourServicesData.map((el) => (

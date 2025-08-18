@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ContextProvider } from "../config";
-import type { IFooter } from "@/widgets/Footer";
+import type { IContext } from "../types";
 
-export const useAppContext = (): IFooter => {
+export const useAppContext = (): IContext => {
   return useContext(ContextProvider);
 };
