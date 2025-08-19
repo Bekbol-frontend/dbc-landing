@@ -1,42 +1,20 @@
-import { memo, useEffect, useState } from "react";
+import { memo } from "react";
 import { Content } from "@/shared/ui/Content";
 import { Heading } from "@/shared/ui/Heading";
 import styles from "./Customers.module.scss";
 import { Desc } from "@/shared/ui/Desc";
-import type { ICustomer } from "../types";
-import { API } from "@/shared/api";
-import type { AxiosError } from "axios";
 import { ErrorTitle } from "@/shared/ui/ErrorTitle";
-import type { IData } from "@/shared/types/data";
 import CustomerSwiper from "./CustomerSwiper/CustomerSwiper";
 import { useResponsive } from "@/shared/lib/hooks/useResponsive";
 import Title from "@/shared/ui/Title/ui/Title";
+import { useAppContext } from "@/app/Provider/StoreProvider";
+import { Skeleton } from "@/shared/ui/Skeleton";
 
 function Customers() {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [customerData, setCustomerData] = useState<ICustomer[]>([]);
-
   const { isMobile } = useResponsive();
+  const { customer } = useAppContext();
 
-  useEffect(() => {
-    setLoading(true);
-    const getCustomerData = async () => {
-      try {
-        const res = await API.get<IData<ICustomer[]>>("/api/feedbacks");
-        if (!res.data.data) return new Error("Error");
-
-        setCustomerData(res.data.data);
-      } catch (error) {
-        const err = error as AxiosError;
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    getCustomerData();
-  }, []);
+  const { data: customerData, error, loading } = customer;
 
   if (error) return <ErrorTitle error={error} />;
 
@@ -55,7 +33,17 @@ function Customers() {
         Bizning 10 yildan ortiq mukammal xizmatlarimiz uchun, ishonch bildirgan
         mijozlarimiz fikrlarini qadrlaymiz !
       </Desc>
-      <CustomerSwiper data={customerData} />
+      {loading ? (
+        <div className={styles.skeletonGrid}>
+          {Array(4)
+            .fill("")
+            .map((_, i) => (
+              <Skeleton key={i} className={styles.skeletonItem} />
+            ))}
+        </div>
+      ) : (
+        <CustomerSwiper data={customerData} />
+      )}
     </Content>
   );
 }

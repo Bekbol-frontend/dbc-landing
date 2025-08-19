@@ -6,3 +6,28 @@
   color: var(--color-text-100);
   margin: var(--space-large) 0px;
 }
+
+.skeletonGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  overflow: hidden;
+  gap: 30px;
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+}
+
+.skeletonItem {
+  width: 330px;
+  height: 380px;
+  border-radius: var(--radius-medium);
+
+  @media only screen and (max-width: 768px) {
+    border-radius: var(--radius-large);
+    width: 280px;
+    height: 320px;
+  }
+}

@@ -1,10 +1,11 @@
 import { memo, useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, type SwiperRef } from "swiper/react";
 import styles from "./CustomerSwiper.module.scss";
 import Quote from "@/shared/assets/icons/quote.svg";
 
 // swiper-css
 import "swiper/swiper-bundle.css";
+
 import type { ICustomer } from "../../types";
 import { Desc } from "@/shared/ui/Desc";
 import { Flex } from "@/shared/ui/Flex";
@@ -19,26 +20,23 @@ interface IProps {
 }
 
 function CustomerSwiper({ data }: IProps) {
-  const navigationPrevRef = useRef(null);
-  const navigationNextRef = useRef(null);
+  const swiperRef = useRef<SwiperRef>(null);
 
   return (
     <Swiper
-      slidesPerView={3.8}
+      slidesPerView={3.7}
       spaceBetween={30}
-      navigation={{
-        prevEl: navigationPrevRef.current,
-        nextEl: navigationNextRef.current,
-      }}
+      navigation={false}
       modules={[Navigation]}
       className={styles.swiperWrapper}
+      ref={swiperRef}
       breakpoints={{
         300: {
           slidesPerView: 1.2,
           spaceBetween: 10,
         },
         768: {
-          slidesPerView: 3.8,
+          slidesPerView: 3.7,
           spaceBetween: 30,
         },
       }}
@@ -65,17 +63,22 @@ function CustomerSwiper({ data }: IProps) {
         </SwiperSlide>
       ))}
 
-      <div className={styles.navWrapper}>
-        <span
-          ref={navigationPrevRef}
-          className={clsx([styles.navSpan, styles.rotate])}
-        >
-          <img src={NextIcon} alt="prev" />
-        </span>
-        <span ref={navigationNextRef} className={styles.navSpan}>
-          <img src={NextIcon} alt="next" />
-        </span>
-      </div>
+      {data.length && (
+        <div className={styles.navWrapper}>
+          <span
+            className={clsx([styles.navSpan, styles.rotate])}
+            onClick={() => swiperRef.current?.swiper.slidePrev()}
+          >
+            <img src={NextIcon} alt="prev" />
+          </span>
+          <span
+            className={styles.navSpan}
+            onClick={() => swiperRef.current?.swiper.slideNext()}
+          >
+            <img src={NextIcon} alt="next" />
+          </span>
+        </div>
+      )}
     </Swiper>
   );
 }

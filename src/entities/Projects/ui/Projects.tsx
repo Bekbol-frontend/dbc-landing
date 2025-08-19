@@ -1,66 +1,73 @@
-import { memo, useCallback, useEffect, useMemo, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import styles from "./Projects.module.scss";
 import { SectionTitle } from "@/shared/ui/SectionTitle";
 import { useTranslation } from "react-i18next";
-import { API, baseURL } from "@/shared/api";
-import type { AxiosError } from "axios";
-import type { IData } from "@/shared/types/data";
+import { baseURL } from "@/shared/api";
 import type { IProject } from "../types";
 import { ErrorTitle } from "@/shared/ui/ErrorTitle";
 import { Flex } from "@/shared/ui/Flex";
 import Title from "@/shared/ui/Title/ui/Title";
 import { Desc } from "@/shared/ui/Desc";
-import { LinkBtn } from "@/shared/ui/LinkBtn";
 import { Button } from "@/shared/ui/Button";
 import { Skeleton } from "@/shared/ui/Skeleton";
 import { useResponsive } from "@/shared/lib/hooks/useResponsive";
 import { Content } from "@/shared/ui/Content";
+import { LinkRouter } from "@/shared/ui/LinkRouter";
+import { useAppContext } from "@/app/Provider/StoreProvider";
 
 function Projects() {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [data, setData] = useState<IProject[]>([]);
-  const [sliceNumber, setSliceNumber] = useState(2);
+  const [sliceNumber, setSliceNumber] = useState(1);
+  const [allData, setAllData] = useState(false);
 
-  const { t, i18n } = useTranslation();
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const element = ref.current;
+    const rect = element?.getBoundingClientRect();
+    console.log(rect);
+  }, [ref]);
+
+  const { project } = useAppContext();
+  const { data, error, loading } = project;
+
+  const { t } = useTranslation();
   const { isMobile } = useResponsive();
 
   const onClickShowAllData = useCallback(() => {
     setSliceNumber(data.length);
+    setAllData(true);
   }, [data]);
 
-  useEffect(() => {
-    setLoading(true);
-    const getProjects = async () => {
-      try {
-        const res = await API.get<IData<IProject[]>>("/api/projects", {
-          headers: {
-            "Accept-Language": i18n.language,
-          },
-        });
-        if (!res.data) throw new Error("Error");
-        setData(res.data.data);
-      } catch (error) {
-        const err = error as AxiosError;
-        console.log(err.message);
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const onClickHideData = useCallback(() => {
+    const element = ref.current;
 
-    getProjects();
-  }, [i18n.language]);
+    setSliceNumber(2);
+    setAllData(false);
+
+    if (element) {
+      const rect = element.getBoundingClientRect();
+      const offsetTop = rect.top + window.scrollY - 120;
+
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+  }, [ref]);
 
   const products: IProject[] = useMemo<IProject[]>(
     () => data.slice(0, sliceNumber),
     [data, sliceNumber]
   );
 
+  useEffect(() => {
+    setSliceNumber(data.length / 2);
+  }, [data]);
+
   if (error) return <ErrorTitle error={error} />;
 
   return (
-    <Content>
+    <Content className="my-section" ref={ref}>
       <SectionTitle title={t("Our projects")} />
 
       <div className={styles.grid}>
@@ -114,9 +121,9 @@ function Projects() {
               {loading ? (
                 <Skeleton className={styles.linkSkeleton} />
               ) : (
-                <LinkBtn to="/" size="mobile" className={styles.link}>
+                <LinkRouter to="/" size="mobile" className={styles.link}>
                   {t("More")}
-                </LinkBtn>
+                </LinkRouter>
               )}
             </div>
             <div
@@ -140,12 +147,21 @@ function Projects() {
       </div>
 
       <Flex align="center" justify="center">
-        <Button
-          onClick={onClickShowAllData}
-          size={isMobile ? "mobile" : "default"}
-        >
-          {t("All projects")}
-        </Button>
+        {!allData ? (
+          <Button
+            onClick={onClickShowAllData}
+            size={isMobile ? "mobile" : "default"}
+          >
+            {t("All projects")}
+          </Button>
+        ) : (
+          <Button
+            onClick={onClickHideData}
+            size={isMobile ? "mobile" : "default"}
+          >
+            {t("Hide")}
+          </Button>
+        )}
       </Flex>
     </Content>
   );

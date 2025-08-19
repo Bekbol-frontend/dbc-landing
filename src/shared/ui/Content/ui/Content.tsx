@@ -2,7 +2,7 @@ import { clsx } from "@/shared/lib/clsx";
 import styles from "./Content.module.scss";
 import type { ComponentProps } from "react";
 
-function Content({
+function  Content({
   children,
   className = "",
   ...otherProps
