@@ -5,6 +5,9 @@ import { HomePageAsync } from "@/pages/HomePage";
 import { ServicesPageAsync } from "@/pages/ServicesPage";
 import { routePaths } from "@/shared/config/routeConfig";
 import { NotFoundPageAsync } from "@/pages/NotFoundPage";
+import { ProjectsPageAsync } from "@/pages/ProjectsPage";
+import { OurTeamPageAsync } from "@/pages/OurTeamPage";
+import { ProjectsDetailPageAsync } from "@/pages/ProjectsDetailPage";
 
 function AppRoute() {
   return (
@@ -13,6 +16,12 @@ function AppRoute() {
         <Route index element={<HomePageAsync />} />
         <Route path={routePaths.Services} element={<ServicesPageAsync />} />
         <Route path={routePaths.NotFound} element={<NotFoundPageAsync />} />
+        <Route path={routePaths.Projects} element={<ProjectsPageAsync />} />
+        <Route
+          path={`${routePaths.Projects}/:id`}
+          element={<ProjectsDetailPageAsync />}
+        />
+        <Route path={routePaths.OurTeam} element={<OurTeamPageAsync />} />
       </Route>
     </Routes>
   );

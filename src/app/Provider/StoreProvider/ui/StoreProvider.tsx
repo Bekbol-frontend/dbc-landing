@@ -42,7 +42,6 @@ function StoreProvider({ children }: IProps) {
     const getFooterData = async () => {
       try {
         const res = await API.get<IData<IFooterData>>("/api/footer");
-        console.log(res.data.data);
         if (!res.data.data) throw new Error("Error");
 
         setFooterData(res.data.data);
@@ -73,7 +72,6 @@ function StoreProvider({ children }: IProps) {
         setOurServicesData(res.data.data);
       } catch (error) {
         const err = error as AxiosError;
-        console.log(err.message);
         setErrorService(err.message);
       } finally {
         setLoadingService(false);

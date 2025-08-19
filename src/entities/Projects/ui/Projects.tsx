@@ -14,18 +14,13 @@ import { useResponsive } from "@/shared/lib/hooks/useResponsive";
 import { Content } from "@/shared/ui/Content";
 import { LinkRouter } from "@/shared/ui/LinkRouter";
 import { useAppContext } from "@/app/Provider/StoreProvider";
+import { routePaths } from "@/shared/config/routeConfig";
 
 function Projects() {
   const [sliceNumber, setSliceNumber] = useState(1);
   const [allData, setAllData] = useState(false);
 
   const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const element = ref.current;
-    const rect = element?.getBoundingClientRect();
-    console.log(rect);
-  }, [ref]);
 
   const { project } = useAppContext();
   const { data, error, loading } = project;
@@ -121,7 +116,11 @@ function Projects() {
               {loading ? (
                 <Skeleton className={styles.linkSkeleton} />
               ) : (
-                <LinkRouter to="/" size="mobile" className={styles.link}>
+                <LinkRouter
+                  to={`${routePaths.Projects}/${el.id}`}
+                  size="mobile"
+                  className={styles.link}
+                >
                   {t("More")}
                 </LinkRouter>
               )}
