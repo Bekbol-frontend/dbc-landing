@@ -28,6 +28,7 @@ function Links({ className = "" }: IProps) {
             })
           }
           onClick={onClickToTop}
+          key={el.path}
         >
           {t(el.name)}
         </NavLink>
