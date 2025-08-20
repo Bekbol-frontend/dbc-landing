@@ -8,7 +8,8 @@
   line-height: var(--title-line-height-lg);
   transition: var(--transition);
 
-  &:hover {
+  &:hover,
+  &.active {
     color: var(--color-blue-150);
   }
 

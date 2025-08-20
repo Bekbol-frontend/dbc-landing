@@ -1,10 +1,10 @@
-import { memo } from "react";
+import { memo, useCallback } from "react";
 import styles from "./Links.module.scss";
 import { Flex } from "@/shared/ui/Flex";
-import { Link } from "react-router-dom";
-import { routePaths } from "@/shared/config/routeConfig";
+import { NavLink } from "react-router-dom";
 import { clsx } from "@/shared/lib/clsx";
 import { useTranslation } from "react-i18next";
+import { menuItems } from "@/widgets/Header";
 
 interface IProps {
   className?: string;
@@ -13,20 +13,25 @@ interface IProps {
 function Links({ className = "" }: IProps) {
   const { t } = useTranslation();
 
+  const onClickToTop = useCallback(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Flex flexDirection="column" gap={15} className={clsx([className])}>
-      <Link to={routePaths.Home} className={styles.menuLink}>
-        {t("Services")}
-      </Link>
-      <Link to={routePaths.Home} className={styles.menuLink}>
-        {t("Projects")}
-      </Link>
-      <Link to={routePaths.Home} className={styles.menuLink}>
-        {t("Our team")}
-      </Link>
-      <Link to={routePaths.Home} className={styles.menuLink}>
-        {t("Contacts")}
-      </Link>
+      {menuItems.map((el) => (
+        <NavLink
+          to={el.path}
+          className={({ isActive }) =>
+            clsx([styles.menuLink], {
+              [styles.active]: isActive,
+            })
+          }
+          onClick={onClickToTop}
+        >
+          {t(el.name)}
+        </NavLink>
+      ))}
     </Flex>
   );
 }
