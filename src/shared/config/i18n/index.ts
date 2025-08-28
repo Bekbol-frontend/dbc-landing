@@ -10,6 +10,7 @@ i18n
   .use(initReactI18next)
   .init({
     supportedLngs: ["en", "ru", "uz", "qr"],
+    lng: "qr",
     fallbackLng: "en",
     debug: false,
 
