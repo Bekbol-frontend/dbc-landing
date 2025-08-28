@@ -7,13 +7,14 @@ import { Links } from "@/entities/Links";
 
 interface IProps {
   isOpen: boolean;
+  onCloseMenu: () => void;
 }
 
-function HeaderMenuMobile({ isOpen }: IProps) {
+function HeaderMenuMobile({ isOpen, onCloseMenu }: IProps) {
   return (
     <div className={clsx([styles.headerMenuMobile], { [styles.show]: isOpen })}>
       <div className={styles.inner}>
-        <Links />
+        <Links onCloseMenu={onCloseMenu}/>
         <span className={styles.spanBorder} />
         <EmailAndPhone />
         <span className={styles.spanBorder} />

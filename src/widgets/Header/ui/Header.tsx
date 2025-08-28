@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
 import { Container } from "@/shared/ui/Container";
 import { Flex } from "@/shared/ui/Flex";
 import HeaderMenu from "./HeaderMenu/HeaderMenu";
@@ -23,6 +23,10 @@ function Header() {
       document.body.style.overflow = "unset";
     };
   }, [menu]);
+
+  const onCloseMenu = useCallback(() => {
+    setMenu(false);
+  }, []);
 
   return (
     <header className={styles.header}>
@@ -51,7 +55,7 @@ function Header() {
           </Flex>
         </Flex>
       </Container>
-      <HeaderMenuMobile isOpen={menu} />
+      <HeaderMenuMobile isOpen={menu} onCloseMenu={onCloseMenu} />
     </header>
   );
 }

@@ -8,14 +8,16 @@ import { menuItems } from "@/widgets/Header";
 
 interface IProps {
   className?: string;
+  onCloseMenu?: () => void;
 }
 
-function Links({ className = "" }: IProps) {
+function Links({ className = "", onCloseMenu }: IProps) {
   const { t } = useTranslation();
 
   const onClickToTop = useCallback(() => {
+    onCloseMenu?.();
     window.scrollTo(0, 0);
-  }, []);
+  }, [onCloseMenu]);
 
   return (
     <Flex flexDirection="column" gap={15} className={clsx([className])}>

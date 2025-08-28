@@ -4,17 +4,17 @@ import { useTranslation } from "react-i18next";
 import { useOutside } from "@/shared/lib/hooks/useOutside";
 
 const options = [
-  { value: "ru", label: "Рус" },
-  { value: "uz", label: "O‘zb" },
-  { value: "qr", label: "Qar" },
-  { value: "en", label: "Eng" },
+  { value: "ru", label: "Русский" },
+  { value: "uz", label: "O‘zbek" },
+  { value: "qr", label: "Qaraqalpaq" },
+  { value: "en", label: "English" },
 ];
 
 const lang = {
-  ru: "Рус",
-  uz: "O‘zb",
-  qr: "Qar",
-  en: "Eng",
+  ru: "Русский",
+  uz: "O‘zbek",
+  qr: "Qaraqalpaq",
+  en: "English",
 };
 
 function SwitchLang() {
