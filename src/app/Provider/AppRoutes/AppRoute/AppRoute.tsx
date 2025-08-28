@@ -8,6 +8,7 @@ import { NotFoundPageAsync } from "@/pages/NotFoundPage";
 import { ProjectsPageAsync } from "@/pages/ProjectsPage";
 import { OurTeamPageAsync } from "@/pages/OurTeamPage";
 import { ProjectsDetailPageAsync } from "@/pages/ProjectsDetailPage";
+import { ContactPageAynsc } from "@/pages/ContactPage";
 
 function AppRoute() {
   return (
@@ -21,6 +22,7 @@ function AppRoute() {
           path={`${routePaths.Projects}/:id`}
           element={<ProjectsDetailPageAsync />}
         />
+        <Route path={routePaths.Contacts} element={<ContactPageAynsc />} />
         <Route path={routePaths.OurTeam} element={<OurTeamPageAsync />} />
       </Route>
     </Routes>

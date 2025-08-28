@@ -4,6 +4,10 @@
   position: relative;
   padding-bottom: 150px;
 
+  @media (max-width: 768px) {
+    padding-bottom: 120px;
+  }
+
   .item {
     background-color: var(--color-bg-cyan);
     padding: var(--space-large);
