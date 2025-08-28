@@ -21,7 +21,7 @@ function PageOffline() {
     <Section className={styles.pageOffline}>
       <div className={styles.inner}>
         <Flex className={styles.imgWrapper} align="center" justify="center">
-          <img src={ImageInternet} alt="image internet" />
+          <img src={ImageInternet} alt="Internet outage..." />
         </Flex>
         <Flex className={styles.textWrapper} flexDirection="column" gap={15}>
           <Title className={styles.title} level={isMobile ? "h2" : "h1"}>
