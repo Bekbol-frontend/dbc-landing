@@ -5,12 +5,15 @@ import { Container } from "@/shared/ui/Container";
 import { HeadingForSection } from "@/shared/ui/HeadingForSection";
 import { Section } from "@/shared/ui/Section";
 import { memo } from "react";
+import { useTranslation } from "react-i18next";
 
 function ContactPage() {
+  const {t} = useTranslation()
+
   return (
     <Section>
       <Container>
-        <HeadingForSection title="Kontaktlar" />
+        <HeadingForSection title={t("Contacts")} />
         <ContactMap />
         <FormSend />
         <Customers />

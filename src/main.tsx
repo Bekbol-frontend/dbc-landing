@@ -8,11 +8,14 @@ import "./shared/config/i18n";
 // styles
 import "./app/styles/main.scss";
 import { StoreProvider } from "./app/Provider/StoreProvider/index.ts";
+import { ErrorBoundary } from "./app/Provider/ErrorBoundary/index.ts";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
     <StoreProvider>
-      <App />
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
     </StoreProvider>
   </BrowserRouter>
 );

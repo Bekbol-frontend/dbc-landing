@@ -1,13 +1,12 @@
+.title {
+  color: var(--color-blue-250);
+  margin-left: var(--space-large);
+  padding-top: var(--space-medium);
 
-  .title {
-    color: var(--color-blue-250);
-    margin-left: var(--space-large);
-    padding-top: var(--space-medium);
-
-    @media screen and (max-width: 768px) {
-      margin-left: var(--space-medium);
-      padding-left: var(--space-medium);
-      padding-top: 0;
-      margin-bottom: var(--space-medium);
-    }
+  @media screen and (max-width: 768px) {
+    margin-left: 0px !important;
+    padding-left: 0px;
+    padding-top: 0;
+    margin-bottom: var(--space-medium);
   }
+}

@@ -42,13 +42,11 @@ function Partners() {
   if (loading) return <PartnersSkeleton />;
   if (error) return <ErrorTitle error={error} />;
 
-  return partners.length ? (
+  return (
     <Content>
       <SectionTitle title={t("Our partners")} className={styles.title} />
       <PartnersSwiper partners={partners} />
     </Content>
-  ) : (
-    "joq"
   );
 }
 

@@ -29,5 +29,12 @@
   "Contacts": "Kontaktlar",
   "Home page": "Bosh sahifa",
   "Phone number": "Telefon raqami",
-  "Hide": "Yashirish"
+  "Hide": "Yashirish",
+  "Our customers' opinions about us": "Mijozlarimizning biz haqimizda fikrlari",
+  "We value the opinions of our customers who have trusted us for over 10 years of excellent service!": "Bizning 10 yildan ortiq mukammal xizmatlarimiz uchun, ishonch bildirgan mijozlarimiz fikrlarini qadrlaymiz !",
+  "Something went wrong...": "Nimadir noto'g'ri ketdi...",
+  "We were unable to load the page you requested. We will resolve this issue soon.": "Siz so'ragan sahifani yuklay olmadik. Bu muammoni tez orada hal qilamiz.",
+  "Reload page": "Sahifani qayta yuklash",
+  "Internet outage...": "Internet uzilishi...",
+  "There may be a network problem. Or you are not connected to the network.": "Tarmoq bilan bog'liq muammo bo'lishi mumkin. Yoki siz tarmoqqa ulanmagansiz."
 }

@@ -1,0 +1,25 @@
+.pageOffline {
+  padding: var(--space-large);
+  display: grid;
+  place-items: center;
+
+  .inner {
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+
+    .imgWrapper {
+      margin-bottom: var(--space-large);
+      text-align: center;
+    }
+
+    .textWrapper {
+      margin-bottom: var(--space-large);
+
+      .title,
+      .desc {
+        width: 100%;
+      }
+    }
+  }
+}
