@@ -4,7 +4,12 @@ import styles from "./ContactMap.module.scss";
 import MapPoint from "@/shared/assets/icons/mapPoint.svg";
 import { useResponsive } from "@/shared/lib/hooks/useResponsive";
 
-function ContactMap() {
+interface IProps {
+  lat: number;
+  lng: number;
+}
+
+function ContactMap({ lat, lng }: IProps) {
   const { isMobile } = useResponsive();
 
   return (
@@ -12,14 +17,14 @@ function ContactMap() {
       <YMaps>
         <Map
           defaultState={{
-            center: [42.470682, 59.61645],
+            center: [lat, lng],
             zoom: 14,
           }}
           width="100%"
           height={isMobile ? "350px" : "600px"}
         >
           <Placemark
-            geometry={[42.470682, 59.61645]}
+            geometry={[lat, lng]}
             options={{
               iconLayout: "default#image",
               iconImageHref: MapPoint,

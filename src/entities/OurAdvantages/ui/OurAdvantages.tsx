@@ -28,13 +28,13 @@ function OurAdvantages() {
                 className={styles.itemTitle}
                 level={isMobile ? "h2" : "h1"}
               >
-                {el.title}
+                {t(el.title)}
               </Title>
               <Desc
                 className={styles.desc}
                 level={isMobile ? "mobile" : "desktop"}
               >
-                {el.subTitle}
+                {t(el.subTitle)}
               </Desc>
             </div>
           </div>

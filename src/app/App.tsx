@@ -19,7 +19,7 @@ function App() {
     };
   }, []);
 
-  if (!false) return <PageOffline />;
+  if (!isOnline) return <PageOffline />;
 
   return (
     <Suspense fallback={<PageLoading />}>
