@@ -19,7 +19,7 @@ function Company() {
   const [error, setError] = useState<string | null>(null);
   const [companyData, setCompanyData] = useState<ICompanyData | null>(null);
 
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const { isMobile } = useResponsive();
 
   useEffect(() => {
@@ -73,8 +73,9 @@ function Company() {
               className={styles.desc}
               level={isMobile ? "mobile" : "desktop"}
             >
-              DATA — bu shunchaki IT kompaniya emas. Bu — texnologiya, g‘oya va
-              ishonchning mukammal yig’ilmasi
+              {t(
+                "DATA is not just an IT company. It is a perfect combination of technology, ideas and trust."
+              )}
             </Desc>
           )}
           {loading ? (
@@ -84,8 +85,9 @@ function Company() {
               className={clsx([styles.desc, styles.descBottom])}
               level={isMobile ? "mobile" : "desktop"}
             >
-              Biz murakkab muammolarni sodda va samarali yechimlarga
-              aylantiramiz.
+              {t(
+                "We transform complex problems into simple and effective solutions."
+              )}
             </Desc>
           )}
 

@@ -31,6 +31,7 @@ function LinkRouter(props: IProps) {
       to={to}
       {...otherProps}
       className={clsx([styles.btn, className], mods)}
+      onClick={() => window.scrollTo(0, 0)}
     >
       <span className={styles.spanText}>{children}</span>
     </Link>
